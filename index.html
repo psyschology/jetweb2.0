@@ -180,11 +180,22 @@ body.dark {
                     </a>
                 </div>
             </div>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" id="scroll-down">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </div>
+            <script>
+                const scrollDown = document.getElementById('scroll-down');
+            
+                scrollDown.addEventListener('click', () => {
+                    window.scrollBy({
+                        top: window.innerHeight,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            </script>
         </section>
 
         <section id="about" class="py-20 bg-white">
@@ -214,9 +225,9 @@ body.dark {
                             </div>
                         </div>
                     </div>
-                    <div class="relative h-64 md:h-auto">
-                        <img src="jetweb.png" alt="JetwebLabs Team" class="rounded-lg shadow-lg object-cover w-full h-full">
-                    </div>
+                    <div class="relative h-64 md:h-auto flex items-center justify-center">
+                        <span class="text-8xl">💻</span> <!-- Replace with your preferred team emoticon -->
+                    </div>                                      
                 </div>
                 <div class="mt-16">
                     <h3 class="text-2xl font-bold mb-6 text-center">What Our Clients Say</h3>
@@ -321,43 +332,48 @@ body.dark {
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-12 text-center">Our Portfolio</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=E-commerce" alt="E-commerce Platform" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="relative overflow-hidden rounded-lg shadow-md group flex items-center justify-center h-64">
+                        <span class="text-9xl text-blue-600">🛒</span> <!-- Large icon -->
                         <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <button onclick="openModal('portfolio1')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=Healthcare App" alt="Healthcare App" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openModal('portfolio2')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        <div class="relative overflow-hidden rounded-lg shadow-md group">
+                            <span class="text-9xl text-blue-600 flex items-center justify-center h-64">🩺</span> <!-- Healthcare App -->
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="openModal('portfolio2')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                            </div>
+                        </div>
+                    
+                        <div class="relative overflow-hidden rounded-lg shadow-md group">
+                            <span class="text-9xl text-blue-600 flex items-center justify-center h-64">💰</span> <!-- Finance Dashboard -->
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="openModal('portfolio3')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                            </div>
+                        </div>
+                    
+                        <div class="relative overflow-hidden rounded-lg shadow-md group">
+                            <span class="text-9xl text-blue-600 flex items-center justify-center h-64">📱</span> <!-- Social Media Platform -->
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="openModal('portfolio4')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                            </div>
+                        </div>
+                    
+                        <div class="relative overflow-hidden rounded-lg shadow-md group">
+                            <span class="text-9xl text-blue-600 flex items-center justify-center h-64">🌐</span> <!-- IoT Management System -->
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="openModal('portfolio5')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                            </div>
+                        </div>
+                    
+                        <div class="relative overflow-hidden rounded-lg shadow-md group">
+                            <span class="text-9xl text-blue-600 flex items-center justify-center h-64">🤖</span> <!-- AI-powered Chatbot -->
+                            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="openModal('portfolio6')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=Finance Dashboard" alt="Financial Dashboard" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openModal('portfolio3')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=Social Media" alt="Social Media Platform" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openModal('portfolio4')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=IoT System" alt="IoT Management System" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openModal('portfolio5')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
-                        </div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-md group">
-                        <img src="/placeholder.svg?height=300&width=400&text=AI Chatbot" alt="AI-powered Chatbot" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <button onclick="openModal('portfolio6')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
-                        </div>
-                    </div>
-                </div>
+                    
             </div>
         </section>
 
@@ -411,8 +427,8 @@ body.dark {
                     <div>
                         <div class="mb-6">
                             <h3 class="text-2xl font-bold mb-2">Contact Information</h3>
-                            <p>Email: info@jetweblabs.com</p>
-                            <p>Phone: +1 (555) 123-4567</p>
+                            <p>Email: support@jetweb.in</p>
+                            <p>Phone: +91 82406-20015</p>
                             <p>Address: 123 Tech Street, Silicon Valley, CA 94000</p>
                         </div>
                         <div class="h-64 rounded-lg overflow-hidden">
@@ -491,7 +507,7 @@ body.dark {
         const animationText = document.getElementById('animation-text');
         const mainContent = document.getElementById('main-content');
 
-        function typeText(text, delay = 100) {
+        function typeText(text, delay = 80) {
             return new Promise((resolve) => {
                 let i = 0;
                 const intervalId = setInterval(() => {
@@ -507,11 +523,11 @@ body.dark {
         }
 
         async function runOpeningAnimation() {
-            await typeText('JetwebLabs');
+            await typeText('Jetweb Labs', 30);
             await new Promise(resolve => setTimeout(resolve, 500));
             animationText.textContent = '';
-            await typeText('Your IT Buddy...', 50);
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await typeText('Your IT Buddy...', 30);
+            await new Promise(resolve => setTimeout(resolve, 900));
             openingAnimation.style.opacity = '0';
             mainContent.style.opacity = '1';
             setTimeout(() => {
@@ -657,6 +673,10 @@ body.dark {
 const themeToggle = document.getElementById('theme-toggle');
 const toggleIcon = document.getElementById('toggle-icon');
 
+// Set the initial theme to light
+document.body.classList.add('light');
+toggleIcon.textContent = '🌞'; // Sun icon for light mode
+
 // Function to toggle themes
 themeToggle.addEventListener('click', () => {
     if (document.body.classList.contains('dark')) {
@@ -670,14 +690,6 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Set initial theme based on system preference
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark');
-    toggleIcon.textContent = '🌜';
-} else {
-    document.body.classList.add('light');
-    toggleIcon.textContent = '🌞';
-}
     </script>
 </body>
 </html>
