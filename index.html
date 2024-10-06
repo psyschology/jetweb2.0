@@ -392,37 +392,91 @@ body.dark {
                 <h2 class="text-4xl font-bold mb-12 text-center">Contact Us</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div>
-                        <form id="contactForm" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-                                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Your Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                            </div>
-                            <div>
-                                <label for="service" class="block text-sm font-medium text-gray-700">Select a Service</label>
-                                <select id="service" name="service" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                                    <option value="">Select a Service</option>
-                                    <option value="website-development">Website Development</option>
-                                    <option value="app-development">App Development</option>
-                                    <option value="cloud-management">Cloud Management</option>
-                                    <option value="it-consulting">IT Consulting</option>
-                                    <option value="ecommerce-solutions">E-commerce Solutions</option>
-                                    <option value="digital-marketing">Digital Marketing</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
-                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Send Message</button>
-                        </form>
+                        <form id="contactForm" action="https://formspree.io/f/xdkonzjo" method="POST" class="space-y-6">
+    <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+    </div>
+    <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+    </div>
+    <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Your Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+    </div>
+    <div>
+        <label for="service" class="block text-sm font-medium text-gray-700">Select a Service</label>
+        <select id="service" name="service" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <option value="">Select a Service</option>
+            <option value="website-development">Website Development</option>
+            <option value="app-development">App Development</option>
+            <option value="cloud-management">Cloud Management</option>
+            <option value="it-consulting">IT Consulting</option>
+            <option value="ecommerce-solutions">E-commerce Solutions</option>
+            <option value="digital-marketing">Digital Marketing</option>
+        </select>
+    </div>
+    <div>
+        <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Send Message</button>
+</form>
+                        <div id="thankYouModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center">🎉 Thank You!</h2>
+        <p class="text-center mt-4">We will reach out to you as soon as possible.</p>
+        <button id="closeModal" class="mt-6 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Close</button>
+    </div>
+</div>
+                        <style>
+                           .hidden {
+    display: none;
+}
+
+#thankYouModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+ 
+                        </style>
+                        
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+
+    // Send the form data using fetch
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Show the thank-you modal
+            document.getElementById('thankYouModal').classList.remove('hidden');
+            form.reset(); // Reset the form after submission
+        } else {
+            alert('Oops! There was a problem submitting your form.');
+        }
+    })
+    .catch(() => alert('Oops! There was a problem submitting your form.'));
+});
+
+// Close the modal when the close button is clicked
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('thankYouModal').classList.add('hidden');
+});
+</script>
                     </div>
                     <div>
                         <div class="mb-6">
