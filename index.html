@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetwebLabs - Transform Your Business Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .shadow-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div id="logo" class="text-2xl font-bold text-white">JetwebLabs</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-item text-white hover:text-yellow-400 transition-colors">Home</a>
+                <a href="#about" class="nav-item text-white hover:text-yellow-400 transition-colors">About</a>
+                <a href="#services" class="nav-item text-white hover:text-yellow-400 transition-colors">Services</a>
+                <a href="#portfolio" class="nav-item text-white hover:text-yellow-400 transition-colors">Portfolio</a>
+                <a href="#contact" class="nav-item text-white hover:text-yellow-400 transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded transition-colors">Get Started</a>
+                <button id="menuButton" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-blue-900 z-50 hidden">
+        <div class="container mx-auto px-6 py-8">
+            <button id="closeMenu" class="absolute top-4 right-4 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <nav class="flex flex-col space-y-4 mt-8">
+                <a href="#home" class="text-white text-lg font-medium hover:text-yellow-400 transition-colors">Home</a>
+                <a href="#about" class="text-white text-lg font-medium hover:text-yellow-400 transition-colors">About</a>
+                <a href="#services" class="text-white text-lg font-medium hover:text-yellow-400 transition-colors">Services</a>
+                <a href="#portfolio" class="text-white text-lg font-medium hover:text-yellow-400 transition-colors">Portfolio</a>
+                <a href="#contact" class="text-white text-lg font-medium hover:text-yellow-400 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <video autoplay loop muted playsinline class="object-cover w-full h-full" poster="tech.png">
+                    <source src="/tech-background.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white shadow-text">
+                    Transform Your Business Online with JetwebLabs
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200 shadow-text">
+                    From websites to apps, cloud solutions to IT consulting – We've got you covered!
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-6 py-3 rounded-lg text-lg font-semibold transition-colors">
+                        Start Your Project
+                    </a>
+                    <a href="#services" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white border border-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-8 text-center">About Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg mb-6">
+                            JetwebLabs is your one-stop IT solution provider for online brands and businesses. We bring cutting-edge technology and creative expertise together to help you succeed in the digital world.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+                                <span>Web Development</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+                                <span>App Creation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+                                <span>Cloud Solutions</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+                                <span>IT Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-64 md:h-auto">
+                        <img src="jetweb.png" alt="JetwebLabs Team" class="rounded-lg shadow-lg object-cover w-full h-full">
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold mb-6 text-center">What Our Clients Say</h3>
+                    <div class="relative">
+                        <div class="overflow-hidden">
+                            <div id="testimonialSlider" class="flex transition-transform duration-300 ease-in-out">
+                                <div class="w-full flex-shrink-0 px-4">
+                                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                                        <p class="italic mb-4">"JetwebLabs transformed our online presence. Their expertise in web development is unmatched!"</p>
+                                        <p class="font-semibold">John Doe</p>
+                                        <p class="text-sm text-gray-600">Tech Innovators</p>
+                                    </div>
+                                </div>
+                                <div class="w-full flex-shrink-0 px-4">
+                                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                                        <p class="italic mb-4">"The app JetwebLabs created for us has revolutionized how we interact with our customers."</p>
+                                        <p class="font-semibold">Jane Smith</p>
+                                        <p class="text-sm text-gray-600">Global Solutions</p>
+                                    </div>
+                                </div>
+                                <div class="w-full flex-shrink-0 px-4">
+                                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                                        <p class="italic mb-4">"Their IT consulting services helped us streamline our operations and cut costs significantly."</p>
+                                        <p class="font-semibold">Alex Johnson</p>
+                                        <p class="text-sm text-gray-600">Future Finance</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="prevTestimonial" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button id="nextTestimonial" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">🌐</span>
+                            <h3 class="text-xl font-semibold">Website Development</h3>
+                        </div>
+                        <p class="mb-4">Create stunning, responsive websites tailored to your brand.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('websiteDev')">Learn More</button>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">📱</span>
+                            <h3 class="text-xl font-semibold">App Development</h3>
+                        </div>
+                        <p class="mb-4">Build powerful mobile and web applications for your business needs.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('appDev')">Learn More</button>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">☁️</span>
+                            <h3 class="text-xl font-semibold">Cloud Management</h3>
+                        </div>
+                        <p class="mb-4">Optimize your cloud infrastructure for scalability and performance.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('cloudManagement')">Learn More</button>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">💼</span>
+                            <h3 class="text-xl font-semibold">IT Consulting</h3>
+                        </div>
+                        <p class="mb-4">Get expert advice on technology strategy and implementation.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('itConsulting')">Learn More</button>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">🛒</span>
+                            <h3 class="text-xl font-semibold">E-commerce Solutions</h3>
+                        </div>
+                        <p class="mb-4">Set up and manage online stores with secure payment gateways.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('ecommerce')">Learn More</button>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-2">📈</span>
+                            <h3 class="text-xl font-semibold">Digital Marketing</h3>
+                        </div>
+                        <p class="mb-4">Boost your online presence with targeted digital marketing campaigns.</p>
+                        <button class="text-blue-600 hover:text-blue-800 transition-colors" onclick="openModal('digitalMarketing')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">Our Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="ecommerce.png" alt="E-commerce Platform" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio1')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="health.png" alt="Healthcare App" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio2')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="iot.jpg" alt="Financial Dashboard" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio3')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="ai.png" alt="Social Media Platform" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio4')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="iot.jpg" alt="IoT Management System" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio5')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-md group">
+                        <img src="ai.png" alt="AI-powered Chatbot" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <button onclick="openModal('portfolio6')" class="bg-white text-blue-600 px-4 py-2 rounded-md">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-blue-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Let's Build Your Future Together</h2>
+                <p class="text-xl mb-8">Start Your Project Today!</p>
+                <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-block">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">Contact Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700">Your Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-700">Select a Service</label>
+                                <select id="service" name="service" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                                    <option value="">Select a Service</option>
+                                    <option value="website-development">Website Development</option>
+                                    <option value="app-development">App Development</option>
+                                    <option value="cloud-management">Cloud Management</option>
+                                    <option value="it-consulting">IT Consulting</option>
+                                    <option value="ecommerce-solutions">E-commerce Solutions</option>
+                                    <option value="digital-marketing">Digital Marketing</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Send Message</button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold mb-2">Contact Information</h3>
+                            <p>Email: info@jetweblabs.com</p>
+                            <p>Phone: +1 (555) 123-4567</p>
+                            <p>Address: 123 Tech Street, Silicon Valley, CA 94000</p>
+                        </div>
+                        <div class="h-64 rounded-lg overflow-hidden">
+                            <iframe
+                                title="JetwebLabs Location"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.3325395304414!2d-122.01454168468215!3d37.33463524513264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb59127ce078f%3A0x18e1c3ce7becf1b!2sApple%20Park!5e0!3m2!1sen!2sus!4v1637309850935!5m2!1sen!2sus"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">JetwebLabs</h3>
+                    <p class="text-sm">Transforming businesses through innovative IT solutions</p>
+                </div>
+                <div class="w-full md:w-1/3 text-center mb-6 md:mb-0">
+                    <p>&copy; 2024 JetwebLabs. All rights reserved.</p>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end space-x-4">
+                    <a href="#" aria-label="LinkedIn" class="hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook" class="hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title"></h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500" id="modal-content"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for handling modal, mobile menu, and smooth scrolling
+        function openModal(id) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            
+            // Set content based on the id
+            switch(id) {
+                case 'websiteDev':
+                    modalTitle.textContent = 'Website Development';
+                    modalContent.textContent = 'Our expert team crafts beautiful, functional websites that engage your audience and drive conversions. We use the latest technologies to ensure your site is fast, secure, and optimized for search engines.';
+                    break;
+                case 'appDev':
+                    modalTitle.textContent = 'App Development';
+                    modalContent.textContent = 'From concept to launch, we develop custom mobile and web applications that solve real-world problems. Our apps are built with scalability and user experience in mind, ensuring your solution grows with your business.';
+                    break;
+                case 'cloudManagement':
+                    modalTitle.textContent = 'Cloud Management';
+                    modalContent.textContent = 'We help you leverage the power of cloud computing to reduce costs, increase flexibility, and improve security. Our cloud management services include migration, optimization, and ongoing support to keep your systems running smoothly.';
+                    break;
+                case 'itConsulting':
+                    modalTitle.textContent = 'IT Consulting';
+                    modalContent.textContent = 'Our seasoned consultants provide strategic guidance to align your IT initiatives with your business goals. We offer insights on emerging technologies, process improvements, and digital transformation to keep you ahead of the curve.';
+                    break;
+                case 'ecommerce':
+                    modalTitle.textContent = 'E-commerce Solutions';
+                    modalContent.textContent = 'We build robust e-commerce platforms that provide seamless shopping experiences. From product management to secure checkout processes, we ensure your online store is optimized for sales and customer satisfaction.';
+                    break;
+                case 'digitalMarketing':
+                    modalTitle.textContent = 'Digital Marketing';
+                    modalContent.textContent = 'Our digital marketing experts create data-driven strategies to increase your online visibility and drive qualified leads. We offer services including SEO, PPC, social media marketing, and content marketing to help you reach and engage your target audience.';
+                    break;
+                case 'portfolio1':
+                    modalTitle.textContent = 'E-commerce Platform';
+                    modalContent.textContent = 'A fully responsive online store with advanced features like real-time inventory management and personalized recommendations.';
+                    break;
+                case 'portfolio2':
+                    modalTitle.textContent = 'Healthcare App';
+                    modalContent.textContent = 'A HIPAA-compliant mobile app for patients to schedule appointments, view medical records, and communicate with healthcare providers.';
+                    break;
+                case 'portfolio3':
+                    modalTitle.textContent = 'Financial Dashboard';
+                    modalContent.textContent = 'A real-time financial analytics dashboard for a Fortune 500 company, integrating multiple data sources and providing actionable insights.';
+                    break;
+                case 'portfolio4':
+                    modalTitle.textContent = 'Social Media Platform';
+                    modalContent.textContent = 'A niche social networking platform with features like live streaming, content monetization, and advanced user analytics.';
+                    break;
+                case 'portfolio5':
+                    modalTitle.textContent = 'IoT Management System';
+                    modalContent.textContent = 'An enterprise-level IoT management system for smart cities, handling millions of connected devices and data points.';
+                    break;
+                case 'portfolio6':
+                    modalTitle.textContent = 'AI-powered Chatbot';
+                    modalContent.textContent = 'An intelligent customer service chatbot using natural language processing to handle inquiries across multiple languages and platforms.';
+                    break;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menuButton').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const logo = document.getElementById('logo');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md');
+                header.classList.remove('bg-transparent');
+                logo.classList.add('text-blue-600');
+                logo.classList.remove('text-white');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md');
+                header.classList.add('bg-transparent');
+                logo.classList.remove('text-blue-600');
+                logo.classList.add('text-white');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('#testimonialSlider > div');
+        const totalTestimonials = testimonials.length;
+
+        function showTestimonial(index) {
+            const slider = document.getElementById('testimonialSlider');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        });
+
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        });
+    </script>
+</body>
+</html>
