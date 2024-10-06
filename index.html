@@ -68,14 +68,55 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
+
+        /* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Faster transition */
+}
+
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.toggle-icon {
+    font-size: 24px;
+}
+
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
     <div id="opening-animation">
         <div id="animation-text"></div>
     </div>
-
-    <div id="main-content">
+        <div class="theme-toggle" id="theme-toggle">
+            <span class="toggle-icon" id="toggle-icon">🌞</span>
+        </div>
+        <div id="main-content">
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div id="logo" class="text-2xl font-bold text-white">JetwebLabs</div>
@@ -444,7 +485,7 @@
             await typeText('JetwebLabs');
             await new Promise(resolve => setTimeout(resolve, 500));
             animationText.textContent = '';
-            await typeText('Your IT Buddy...', 50);
+            await typeText('Your IT Buddy', 50);
             await new Promise(resolve => setTimeout(resolve, 1000));
             openingAnimation.style.opacity = '0';
             mainContent.style.opacity = '1';
@@ -585,6 +626,34 @@
             currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
             showTestimonial(currentTestimonial);
         });
+
+// script.js
+const themeToggle = document.getElementById('theme-toggle');
+const toggleIcon = document.getElementById('toggle-icon');
+
+// Function to toggle themes
+themeToggle.addEventListener('click', () => {
+    if (document.body.classList.contains('dark')) {
+        document.body.classList.remove('dark');
+        document.body.classList.add('light');
+        toggleIcon.textContent = '🌞'; // Sun icon for light mode
+    } else {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        toggleIcon.textContent = '🌜'; // Moon icon for dark mode
+    }
+});
+
+// Set initial theme based on system preference
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark');
+    toggleIcon.textContent = '🌜';
+} else {
+    document.body.classList.add('light');
+    toggleIcon.textContent = '🌞';
+}
+
+
     </script>
 </body>
 </html>
